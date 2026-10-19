@@ -6,12 +6,28 @@ Bug reports, fixes and new targets are welcome.
 
 ```bash
 npm ci
-cp .dev.vars.example .dev.vars
+cp .dev.vars.example .dev.vars   # fill in SHOPIFY_WEBHOOK_SECRET and any target you want to try
+npm run dev
 npm run typecheck
 npm test
 ```
 
 Both checks run in CI on every push and pull request. A PR needs both green.
+
+Tests run with Vitest inside the Workers runtime. Targets are tested with a fake `fetch`, so no test hits a real API.
+
+To send a signed test order to the local worker:
+
+```bash
+SECRET=your-dev-secret
+BODY=$(cat test/fixtures/orders-create.json)
+SIG=$(printf %s "$BODY" | openssl dgst -sha256 -hmac "$SECRET" -binary | base64)
+curl -i http://localhost:8787/webhooks/shopify \
+  -H "X-Shopify-Topic: orders/create" \
+  -H "X-Shopify-Shop-Domain: dev-store.myshopify.com" \
+  -H "X-Shopify-Hmac-Sha256: $SIG" \
+  --data-binary "$BODY"
+```
 
 ## What a good change looks like
 

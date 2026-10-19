@@ -48,7 +48,7 @@ POST `https://www.google-analytics.com/mp/collect?measurement_id=...&api_secret=
 - Amounts are in the shop's currency (Shopify's `shop_money`), so a purchase and its refund are in the same currency even when the buyer paid in another one. The exception is a refund with no lines on such an order: the money returned is only known in the buyer's currency, so it's sent with that currency.
 - `timestamp_micros` is the order's creation time for a purchase and the refund's for a refund, when that's within the last 72 hours. The Measurement Protocol doesn't accept older times, so then it's left out and GA4 uses the time it received the event. A time up to 5 minutes in the future (clock skew) is sent as the current time; one further ahead is left out.
 - `consent` carries `ad_user_data` and `ad_personalization`: `GRANTED` when the visitor accepted marketing, `DENIED` when they declined, and no `consent` object when the pixel never reported a choice.
-- Orders Shopify flags as test, and orders whose `source_name` isn't in `ORDER_SOURCES` (default `web`), aren't sent. See the README's configuration reference.
+- Orders Shopify flags as test, and orders whose `source_name` isn't in `ORDER_SOURCES` (default `web`), aren't sent. See [Configuration](../configuration.md).
 
 The worker always uses the global `www.google-analytics.com` endpoint.
 

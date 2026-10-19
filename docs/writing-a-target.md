@@ -117,7 +117,7 @@ Two small edits.
    example({ endpoint: vars.EXAMPLE_ENDPOINT, token: vars.EXAMPLE_TOKEN }),
    ```
 
-2. Add the variables to `.dev.vars.example`, the README's variable tables, and a page under `docs/targets/`.
+2. Add the variables to `.dev.vars.example`, the variable table in `docs/configuration.md`, and a page under `docs/targets/`.
 
 ## Errors
 
