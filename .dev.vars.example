@@ -1,0 +1,56 @@
+# Copy to .dev.vars for local development (npm run dev). Never commit .dev.vars.
+#
+# Only SHOPIFY_WEBHOOK_SECRET is listed as a live key. The Deploy to Cloudflare button
+# reads this file, and the Cloudflare docs don't say whether it asks for every key as a
+# required field. Target credentials are optional, so they stay commented out. Set them
+# afterwards with `wrangler secret put NAME` (see README step 4).
+#
+# At deploy time, enter any placeholder for the secret below. Shopify only shows the real
+# signing secret after you create the webhook, which needs the worker URL first.
+
+# Signing secret Shopify shows under Settings > Notifications > Webhooks.
+SHOPIFY_WEBHOOK_SECRET=replace-me-after-creating-the-webhook
+
+# Optional. Seconds a webhook waits in the queue so the pixel's request lands first. Default 120.
+# PIXEL_WAIT_SECONDS=120
+
+# Optional. true sends orders Shopify flags as test orders (and their refunds). Default false.
+# SEND_TEST_ORDERS=false
+
+# Optional. Comma-separated Shopify source_name values to send; * sends every source. Default web.
+# ORDER_SOURCES=web
+
+# Optional. JSON keyed by *.myshopify.com domain, for several stores. Same variable names as below.
+# STORES={"example-store.myshopify.com":{"SHOPIFY_WEBHOOK_SECRET":"...","GA4_MEASUREMENT_ID":"G-XXXXXXXXXX","GA4_API_SECRET":"..."}}
+
+# Comma-separated allowlist of shops. Optional, but set it on every deploy: without it /collect
+# accepts any *.myshopify.com name.
+# SHOP_DOMAINS=example-store.myshopify.com
+
+# GA4: Admin > Data streams > your stream > Measurement Protocol API secrets
+# GA4_MEASUREMENT_ID=G-XXXXXXXXXX
+# GA4_API_SECRET=
+# GA4_DEBUG=false
+
+# Server-side GTM: full collect URL; the other two are optional
+# SGTM_URL=https://sgtm.example.com/mp/collect
+# SGTM_MEASUREMENT_ID=G-XXXXXXXXXX
+# SGTM_API_SECRET=
+
+# Meta Conversions API: Events Manager > your dataset > Settings
+# META_PIXEL_ID=
+# META_ACCESS_TOKEN=
+# META_TEST_EVENT_CODE=
+# Graph API version, default v25.0
+# META_API_VERSION=v25.0
+# Which line id goes in content_ids: variant_id (default), sku or product_id
+# META_CONTENT_ID=variant_id
+
+# Awin: advertiser id, Conversion API key, commission group code (defaults to DEFAULT)
+# AWIN_ADVERTISER_ID=
+# AWIN_API_KEY=
+# AWIN_COMMISSION_GROUP=DEFAULT
+# true sends orders as Awin test conversions
+# AWIN_TEST=false
+# Days an awc click counts, default 30. Match your program's cookie length.
+# AWIN_COOKIE_DAYS=30

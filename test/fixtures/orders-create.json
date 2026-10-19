@@ -1,0 +1,174 @@
+{
+  "id": 5820000001001,
+  "admin_graphql_api_id": "gid://shopify/Order/5820000001001",
+  "app_id": 580111,
+  "browser_ip": "203.0.113.24",
+  "buyer_accepts_marketing": true,
+  "cancel_reason": null,
+  "cancelled_at": null,
+  "checkout_id": 36600000001001,
+  "checkout_token": "a1b2c3d4e5f60718293a4b5c6d7e8f90",
+  "client_details": {
+    "accept_language": "en-US,en;q=0.9",
+    "browser_height": null,
+    "browser_ip": "203.0.113.24",
+    "browser_width": null,
+    "session_hash": null,
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15"
+  },
+  "confirmed": true,
+  "contact_email": "jane.doe@example.com",
+  "created_at": "2026-10-16T14:03:21-04:00",
+  "currency": "USD",
+  "current_subtotal_price": "84.00",
+  "current_total_price": "93.37",
+  "email": "jane.doe@example.com",
+  "financial_status": "paid",
+  "landing_site": "/products/canvas-tote?utm_source=google&gclid=TeSt-GcLiD-123",
+  "name": "#1001",
+  "note": null,
+  "note_attributes": [],
+  "number": 1,
+  "order_number": 1001,
+  "phone": null,
+  "presentment_currency": "USD",
+  "processed_at": "2026-10-16T14:03:20-04:00",
+  "referring_site": "https://www.google.com/",
+  "source_name": "web",
+  "subtotal_price": "84.00",
+  "subtotal_price_set": {
+    "shop_money": { "amount": "84.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "84.00", "currency_code": "USD" }
+  },
+  "tags": "",
+  "taxes_included": false,
+  "test": false,
+  "token": "f0e1d2c3b4a5968778695a4b3c2d1e0f",
+  "total_discounts": "10.00",
+  "total_discounts_set": {
+    "shop_money": { "amount": "10.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "10.00", "currency_code": "USD" }
+  },
+  "total_line_items_price": "94.00",
+  "total_price": "93.37",
+  "total_price_set": {
+    "shop_money": { "amount": "93.37", "currency_code": "USD" },
+    "presentment_money": { "amount": "93.37", "currency_code": "USD" }
+  },
+  "total_shipping_price_set": {
+    "shop_money": { "amount": "4.99", "currency_code": "USD" },
+    "presentment_money": { "amount": "4.99", "currency_code": "USD" }
+  },
+  "total_tax": "4.38",
+  "total_tax_set": {
+    "shop_money": { "amount": "4.38", "currency_code": "USD" },
+    "presentment_money": { "amount": "4.38", "currency_code": "USD" }
+  },
+  "total_weight": 900,
+  "billing_address": {
+    "first_name": "Jane",
+    "address1": "100 Example Street",
+    "phone": "+1 (555) 010-0199",
+    "city": "Springfield",
+    "zip": "62701-1234",
+    "province": "Illinois",
+    "country": "United States",
+    "last_name": "Doe",
+    "address2": null,
+    "company": null,
+    "latitude": null,
+    "longitude": null,
+    "name": "Jane Doe",
+    "country_code": "US",
+    "province_code": "IL"
+  },
+  "customer": {
+    "id": 7710000001001,
+    "email": "jane.doe@example.com",
+    "created_at": "2026-10-16T14:03:19-04:00",
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "state": "disabled",
+    "verified_email": true,
+    "phone": null,
+    "currency": "USD",
+    "default_address": {
+      "id": 9910000001001,
+      "customer_id": 7710000001001,
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "city": "Springfield",
+      "province": "Illinois",
+      "country": "United States",
+      "zip": "62701-1234",
+      "province_code": "IL",
+      "country_code": "US",
+      "default": true
+    }
+  },
+  "discount_codes": [{ "code": "WELCOME10", "amount": "10.00", "type": "fixed_amount" }],
+  "line_items": [
+    {
+      "id": 14800000001001,
+      "admin_graphql_api_id": "gid://shopify/LineItem/14800000001001",
+      "fulfillable_quantity": 2,
+      "gift_card": false,
+      "grams": 300,
+      "name": "Canvas Tote - Natural",
+      "price": "32.00",
+      "product_exists": true,
+      "product_id": 8030000001001,
+      "quantity": 2,
+      "requires_shipping": true,
+      "sku": "TOTE-NAT",
+      "taxable": true,
+      "title": "Canvas Tote",
+      "total_discount": "0.00",
+      "variant_id": 44100000001001,
+      "variant_title": "Natural",
+      "vendor": "Example Goods",
+      "discount_allocations": [
+        { "amount": "6.81", "discount_application_index": 0, "amount_set": { "shop_money": { "amount": "6.81", "currency_code": "USD" } } }
+      ]
+    },
+    {
+      "id": 14800000001002,
+      "admin_graphql_api_id": "gid://shopify/LineItem/14800000001002",
+      "fulfillable_quantity": 1,
+      "gift_card": false,
+      "grams": 300,
+      "name": "Enamel Mug",
+      "price": "30.00",
+      "product_exists": true,
+      "product_id": 8030000001002,
+      "quantity": 1,
+      "requires_shipping": true,
+      "sku": "",
+      "taxable": true,
+      "title": "Enamel Mug",
+      "total_discount": "0.00",
+      "variant_id": 44100000001002,
+      "variant_title": null,
+      "vendor": "Example Goods",
+      "discount_allocations": [
+        { "amount": "3.19", "discount_application_index": 0, "amount_set": { "shop_money": { "amount": "3.19", "currency_code": "USD" } } }
+      ]
+    }
+  ],
+  "shipping_address": {
+    "first_name": "Jane",
+    "address1": "100 Example Street",
+    "phone": null,
+    "city": "Springfield",
+    "zip": "62701-1234",
+    "province": "Illinois",
+    "country": "United States",
+    "last_name": "Doe",
+    "name": "Jane Doe",
+    "country_code": "US",
+    "province_code": "IL"
+  },
+  "shipping_lines": [
+    { "id": 4700000001001, "code": "Standard", "price": "4.99", "source": "shopify", "title": "Standard" }
+  ]
+}

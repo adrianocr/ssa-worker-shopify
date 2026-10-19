@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ssa-worker-shopify",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "observability": { "enabled": true },
+
+  // Identities, orders and deliveries. No database_id: wrangler deploy creates the database.
+  // Tables are created on first use, so there's no migration step.
+  "d1_databases": [{ "binding": "DB", "database_name": "ssa-worker-shopify" }],
+
+  // Webhooks enqueue here with a delay so the pixel's /collect lands first.
+  // Queues aren't auto-provisioned: run `npm run setup` once before the first deploy.
+  // The consumer re-enqueues failed targets itself and acks those messages, so they're never
+  // redelivered. max_retries covers a consumer that died before acking and a message whose
+  // re-enqueue failed (handed back with retry()); the delivery claims keep a resend from going out twice.
+  "queues": {
+    "producers": [{ "binding": "EVENTS", "queue": "ssa-events" }],
+    "consumers": [{ "queue": "ssa-events", "max_batch_size": 10, "max_retries": 3 }]
+  },
+
+  // Caps POST /collect at 60 requests a minute per IP, counted per Cloudflare location.
+  // Workers on one account that use the same namespace_id share counters, so pick a number
+  // no other worker of yours uses. Remove this block and /collect runs without a limit.
+  "ratelimits": [{ "name": "COLLECT_LIMITER", "namespace_id": "48213", "simple": { "limit": 60, "period": 60 } }],
+
+  // Daily cleanup of old identities, orders and deliveries.
+  "triggers": { "crons": ["17 3 * * *"] },
+
+  // Secrets (SHOPIFY_WEBHOOK_SECRET, target API keys, STORES) go in .dev.vars locally
+  // and `wrangler secret put` in production.
+  "vars": {
+    "PIXEL_WAIT_SECONDS": "120",
+    "GA4_DEBUG": "false"
+  }
+}

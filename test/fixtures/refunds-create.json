@@ -1,0 +1,69 @@
+{
+  "id": 9330000001001,
+  "admin_graphql_api_id": "gid://shopify/Refund/9330000001001",
+  "created_at": "2026-10-18T09:12:44-04:00",
+  "note": "Damaged in transit",
+  "order_id": 5820000001001,
+  "processed_at": "2026-10-18T09:12:44-04:00",
+  "restock": true,
+  "total_duties_set": {
+    "shop_money": { "amount": "0.00", "currency_code": "USD" },
+    "presentment_money": { "amount": "0.00", "currency_code": "USD" }
+  },
+  "user_id": 8800000001001,
+  "order_adjustments": [],
+  "transactions": [
+    {
+      "id": 6900000001001,
+      "admin_graphql_api_id": "gid://shopify/OrderTransaction/6900000001001",
+      "amount": "26.95",
+      "authorization": null,
+      "created_at": "2026-10-18T09:12:43-04:00",
+      "currency": "USD",
+      "gateway": "shopify_payments",
+      "kind": "refund",
+      "order_id": 5820000001001,
+      "parent_id": 6900000000999,
+      "processed_at": "2026-10-18T09:12:43-04:00",
+      "status": "success",
+      "test": false
+    },
+    {
+      "id": 6900000001002,
+      "amount": "5.00",
+      "currency": "USD",
+      "kind": "refund",
+      "order_id": 5820000001001,
+      "status": "failure"
+    }
+  ],
+  "refund_line_items": [
+    {
+      "id": 5100000001001,
+      "line_item_id": 14800000001002,
+      "location_id": 6400000001001,
+      "quantity": 1,
+      "restock_type": "return",
+      "subtotal": 26.81,
+      "subtotal_set": {
+        "shop_money": { "amount": "26.81", "currency_code": "USD" },
+        "presentment_money": { "amount": "26.81", "currency_code": "USD" }
+      },
+      "total_tax": 0.14,
+      "line_item": {
+        "id": 14800000001002,
+        "name": "Enamel Mug",
+        "price": "30.00",
+        "product_id": 8030000001002,
+        "quantity": 1,
+        "sku": "",
+        "title": "Enamel Mug",
+        "variant_id": 44100000001002,
+        "variant_title": null,
+        "vendor": "Example Goods"
+      }
+    }
+  ],
+  "duties": [],
+  "refund_shipping_lines": []
+}
